@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Multiplayer Rock Paper Scissors</h1>
+        <div id="nickname-selection">
+            <input type="text" id="nickname-input" placeholder="Enter your nickname">
+            <button id="set-nickname">Set Nickname</button>
+        </div>
+        <div id="room-selection" style="display: none;">
+            <button id="create-room">Create Room</button>
+            <div id="join-room">
+                <input type="text" id="room-id" placeholder="Enter Room ID">
+                <button id="join-room-btn">Join Room</button>
+            </div>
+        </div>
+        <div id="waiting-screen" style="display: none;">
+            <p>Waiting for an opponent...</p>
+            <p>Room ID: <span id="room-id-display"></span></p>
+        </div>
+        <div id="game-screen" style="display: none;">
+            <div id="choices">
+                <button class="choice" data-choice="rock">Rock</button>
+                <button class="choice" data-choice="paper">Paper</button>
+                <button class="choice" data-choice="scissors">Scissors</button>
+            </div>
+            <div id="result"></div>
+            <div id="score"></div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/models/GameModel.js"></script>
+    <script src="js/views/GameView.js"></script>
+    <script src="js/controllers/GameController.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
